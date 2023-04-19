@@ -181,9 +181,19 @@ img {
   margin: 5px;
 }
 
-.dishIngredients {
-  width: 350px;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  white-space: pre-line;
-  border: 2px solid red;
+}
+
+li {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+  background-color: #3f8426;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 5px;
 }/*# sourceMappingURL=main.css.map */
