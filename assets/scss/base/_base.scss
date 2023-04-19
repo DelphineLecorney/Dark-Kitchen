@@ -1,11 +1,54 @@
 //Style commun à tous les éléments
+body {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+}
 header {
   background-color: #3f8426;
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 375px;
+  height: 50px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
   h1 {
-    font-family: $font-text;
+    font-family: $font-titre;
+    color: white;
   }
+}
+img {
+  width: 300px;
+  height: 250px;
+  margin: 5px;
+  border-radius: 20px;
+}
+.dishCard {
+  border: 1px solid black;
+  border-radius: 20px;
+  margin: 5px;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  //   background: linear-gradient(#3f8426, #9ad486);
+}
+.dishTitle,
+.dishStyle,
+.dishPrice,
+.dishIngredients,
+.btnAdd {
+  margin: 5px;
+}
+// p {
+//   display: inline;
+// }
+.dishIngredients {
+  width: 350px;
+  text-align: center;
+  white-space: pre-line;
+  border: 2px solid red;
 }
