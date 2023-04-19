@@ -69,7 +69,29 @@ function mettreAJourResultats() {
   `;
 
         newCard.innerHTML += content;
-        libraryCard.appendChild(newCard)
+        libraryCard.appendChild(newCard);
+
+
+        const addButtons = document.querySelectorAll(".btnAdd");
+
+        addButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const title = button.closest(".dishCard").querySelector(".dishTitle").textContent;
+                const price = button.closest(".dishCard").querySelector(".dishPrice").textContent;
+                const item = {
+                    title,
+                    price
+                };
+                cartItems.push(item);
+            });
+        });
+
+        addButtons.forEach((button) => {
+            button.addEventListener("click", afficherCartItems)
+        });
+        addButtons.forEach((button) => {
+            button.addEventListener("click", displayCartTotal)
+        });
     });
 }
 
@@ -91,7 +113,6 @@ addButtons.forEach((button) => {
             price
         };
         cartItems.push(item);
-        // console.log(cartItems);
     });
 });
 
