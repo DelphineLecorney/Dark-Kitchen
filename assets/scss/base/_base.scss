@@ -4,6 +4,7 @@ body {
   justify-items: center;
   align-items: center;
   flex-direction: column;
+  background-color: rgb(223, 222, 222);
 }
 header {
   background-color: #3f8426;
@@ -15,18 +16,42 @@ header {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   h1 {
-    font-family: $font-titre;
+    font-family: $font-text;
+    font-size: 24px;
     color: white;
   }
 }
+
+.btnDarkMode {
+  width: 35px;
+  height: 35px;
+}
+
+#tri {
+  font-family: $font-text;
+  margin: 15px 0 10px 0;
+}
+
 img {
   width: 300px;
   height: 250px;
   margin: 5px;
   border-radius: 20px;
 }
-.dishCard {
+
+.btnAdd {
+  width: 70px;
+  padding: 5px;
   border: 1px solid black;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background-color: black;
+}
+
+.dishCard {
+  // border: 1px solid black;
   border-radius: 20px;
   margin: 5px;
   width: 375px;
@@ -34,8 +59,25 @@ img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  //   background: linear-gradient(#3f8426, #9ad486);
+  background-color: white;
+  box-shadow: 3px 3px 3px grey;
 }
+
+.dishTitle {
+  font-family: $font-main;
+  font-weight: 500;
+}
+
+.dishStyle {
+  font-family: $font-text;
+  font-size: 16px;
+}
+
+.dishPrice {
+  font-family: $font-main;
+  font-weight: 600;
+}
+
 .dishTitle,
 .dishStyle,
 .dishPrice,
@@ -43,13 +85,7 @@ img {
 .btnAdd {
   margin: 5px;
 }
-// .dishIngredients {
-//   font-family: $font-ingredient;
-//   text-align: center;
-//   white-space: pre-line;
-//   border: 2px solid red;
 
-// }
 ul {
   list-style: none;
   margin: 0;
@@ -64,4 +100,5 @@ li {
   border-radius: 5px;
   padding: 2px;
   margin: 5px;
+  text-transform: capitalize;
 }
