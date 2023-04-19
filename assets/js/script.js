@@ -86,13 +86,21 @@ addButtons.forEach((button) => {
     button.addEventListener("click", () => {
         const title = button.closest(".dishCard").querySelector(".dishTitle").textContent;
         const price = button.closest(".dishCard").querySelector(".dishPrice").textContent;
-        const item = { title, price };
+        const item = {
+            title,
+            price
+        };
         cartItems.push(item);
-        console.log(cartItems);
+        // console.log(cartItems);
     });
 });
 
-addButtons.forEach((button) => { button.addEventListener("click", afficherCartItems) });
+addButtons.forEach((button) => {
+    button.addEventListener("click", afficherCartItems)
+});
+addButtons.forEach((button) => {
+    button.addEventListener("click", displayCartTotal)
+});
 
 function afficherCartItems() {
 
@@ -104,4 +112,24 @@ function afficherCartItems() {
         `;
         conteneurCart.innerHTML += content;
     }
+}
+
+// ----------------------------------------------------------------------------------------------------------------------------------
+
+let conteneurTotal = document.querySelector(".conteneurTotal");
+
+function displayCartTotal() {
+    let total = 0;
+    for (let i = 0; i < cartItems.length; i++) {
+        const priceStr = cartItems[i].price.replace(" €", "");
+        const priceNum = parseFloat(priceStr);
+        total += priceNum;
+    }
+    console.log(`Total: ${total} €`);
+
+    conteneurTotal.innerHTML = "";
+    let content = `
+        <li class="cartItem">Total : ${total} €</li>
+        `;
+    conteneurTotal.innerHTML += content;
 }
