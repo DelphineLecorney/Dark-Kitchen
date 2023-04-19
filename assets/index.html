@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,19 +9,31 @@
     <script defer src="./js/collection.js"></script>
     <script defer src="./js/script.js"></script>
     <title>Dark kitchen</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <header>
-      <div class="menuBtn"></div>
-      <h1>Dark Kitchen</h1>
-      <div class="darkmodeBtn"></div>
+        <div></div>
+        <h1>Dark Kitchen</h1>
+        <div class="darkmodeBtn"></div>
     </header>
     <main>
-      <section class="libraryCard"></section>
-      <section class="shoppingCart"></section>
+        <div class="menuBtn">
+            <label for="tri">Trier par :</label>
+            <select id="tri">
+              <option value="Vegan">Vegan</option>
+              <option value="Comfort Food">Comfort Food</option>
+              <option value="Healthy">Healthy</option>
+              <option value="Halal">Halal</option>
+              <option value="Nicolas Cage">Nicolas Cage</option>
+              </select>
+        </div>
+        <section class="libraryCard"></section>
+        <section class="shoppingCart"></section>
     </main>
     <footer>
-      <!--Copyright-->
+        <!--Copyright-->
     </footer>
-  </body>
+</body>
+
 </html>
