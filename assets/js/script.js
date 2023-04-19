@@ -93,6 +93,7 @@ addButtons.forEach((button) => {
 });
 
 addButtons.forEach((button) => { button.addEventListener("click", afficherCartItems) });
+addButtons.forEach((button) => { button.addEventListener("click", changeTotal) });
 
 function afficherCartItems() {
 
@@ -103,5 +104,14 @@ function afficherCartItems() {
         <li class="cartItem">${items.title} ${items.price}</li>
         `;
         conteneurCart.innerHTML += content;
+    }
+}
+
+// ----------------------------------------------------------------------------------------------------------------------------------
+
+function changeTotal() {
+    for (items of cartItems) {
+        let total = 0;
+        total += parseFloat(items.price);
     }
 }
