@@ -1,2 +1,11 @@
 //Style commun à tous les éléments
-
+header {
+  background-color: #3f8426;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 375px;
+  h1 {
+    font-family: $font-text;
+  }
+}
