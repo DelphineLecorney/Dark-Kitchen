@@ -1,5 +1,4 @@
-const dishCollection = [
-    {  
+const dishCollection = [{
         dishTitle: "Chakalaka",
         dishIngredients: ["White beans", "onions", "peppers", "tomato", "carrot", "garlic", "coriander", "olive oil"],
         dishStyle: "Vegan",
@@ -17,7 +16,7 @@ const dishCollection = [
 
     {
         dishTitle: "Tartiflette",
-        dishIngredients: ["Potatoes", "Reblochon", "butter", "onions", "bacon bits","white wine"],
+        dishIngredients: ["Potatoes", "Reblochon", "butter", "onions", "bacon bits", "white wine"],
         dishStyle: "Comfort Food",
         dishPrice: 18,
         dishImg: "./img/tartiflette.jpg",
@@ -33,15 +32,15 @@ const dishCollection = [
 
     {
         dishTitle: "Pasteis De Nata",
-        dishIngredients: ["Sugar", "flour", "salt", "puff pastry",  "egg yolk", "milk", "lemon  zest"],
+        dishIngredients: ["Sugar", "flour", "salt", "puff pastry", "egg yolk", "milk", "lemon  zest"],
         dishStyle: "Healthy",
         dishPrice: 2.70,
         dishImg: "./img/pasteisdenata.jpg",
     },
 
     {
-        dishTitle:"Greek Salad",
-        dishIngredients:["tomato", "green pepper", "onion", "origan", "pepper", "salt", "cucumber", "feta cheese"],
+        dishTitle: "Greek Salad",
+        dishIngredients: ["tomato", "green pepper", "onion", "origan", "pepper", "salt", "cucumber", "feta cheese"],
         dishStyle: "Healthy",
         dishPrice: 3.18,
         dishImg: "./img/greeksalad.jpg",
@@ -49,7 +48,7 @@ const dishCollection = [
 
     {
         dishTitle: "Lentil Soup",
-        dishIngredients: ["lentils", "vegetable broth", "onions", "garlic","carrots", "celery", "cumin", "salt", "black pepper", "olive oil"],
+        dishIngredients: ["lentils", "vegetable broth", "onions", "garlic", "carrots", "celery", "cumin", "salt", "black pepper", "olive oil"],
         dishStyle: "Halal",
         dishPrice: 13,
         dishImg: "./img/lentilSoup.jpg",
@@ -57,7 +56,7 @@ const dishCollection = [
 
     {
         dishTitle: "Hummus with Pita Bread",
-        dishIngredients: ["chickpeas", "tahini", "garlic", "garlic","lemon juice", "olive oil", "salt", "cumin", "pita bread"],
+        dishIngredients: ["chickpeas", "tahini", "garlic", "garlic", "lemon juice", "olive oil", "salt", "cumin", "pita bread"],
         dishStyle: "Halal",
         dishPrice: 13,
         dishImg: "./img/hummusPita.jpg",
@@ -73,7 +72,7 @@ const dishCollection = [
 
     {
         dishTitle: "Grilled chicken with charred pineapple salad",
-        dishIngredients: ["teaspoon dried","olive oil","free-range chicken breasts","quinoa","white cabbage","pineapple"],
+        dishIngredients: ["teaspoon dried", "olive oil", "free-range chicken breasts", "quinoa", "white cabbage", "pineapple"],
         dishStyle: "Nicolas Cage",
         dishPrice: 14,
         dishImg: "./img/chicken.jpeg",

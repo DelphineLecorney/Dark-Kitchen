@@ -32,7 +32,6 @@ dishCollection.forEach((element) => {
 <p class="dishPrice">${element.dishPrice} €</p>
 <button class="btnAdd">Add</button>
 `;
-
     newCard.innerHTML += content;
     libraryCard.appendChild(newCard);
 });
@@ -77,3 +76,32 @@ function mettreAJourResultats() {
 menuDeroulant.addEventListener("change", mettreAJourResultats);
 
 // ----------------------------------------------------------------------------------------------------------------------------------
+
+let cartItems = [];
+let conteneurCart = document.querySelector(".listCart");
+
+const addButtons = document.querySelectorAll(".btnAdd");
+
+addButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+        const title = button.closest(".dishCard").querySelector(".dishTitle").textContent;
+        const price = button.closest(".dishCard").querySelector(".dishPrice").textContent;
+        const item = { title, price };
+        cartItems.push(item);
+        console.log(cartItems);
+    });
+});
+
+addButtons.forEach((button) => { button.addEventListener("click", afficherCartItems) });
+
+function afficherCartItems() {
+
+    conteneurCart.innerHTML = "";
+
+    for (items of cartItems) {
+        let content = `
+        <li class="cartItem">${items.title} ${items.price}</li>
+        `;
+        conteneurCart.innerHTML += content;
+    }
+}
