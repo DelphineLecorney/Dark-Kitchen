@@ -11,7 +11,7 @@
 // let imgDarkMode = document.createElement("img");
 // imgDarkMode.src = "https://www.svgrepo.com/show/309493/dark-theme.svg";
 // darkMode.appendChild(imgDarkMode);
-// darkMode.classList.add("btnDarkMode");
+// imgDarkMode.classList.add("btnDarkMode");
 
 // create dishCard
 const libraryCard = document.querySelector(".libraryCard");
@@ -75,3 +75,5 @@ function mettreAJourResultats() {
 }
 
 menuDeroulant.addEventListener("change", mettreAJourResultats);
+
+// ----------------------------------------------------------------------------------------------------------------------------------
