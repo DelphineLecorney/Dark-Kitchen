@@ -116,6 +116,13 @@ header h1 {
   }
 }
 
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (min-width: 900px) {
   .libraryCard {
     display: flex;
@@ -140,7 +147,6 @@ img {
   font-size: 16px;
   color: white;
   padding: 5px;
-  cursor: pointer;
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
@@ -254,6 +260,7 @@ li {
   justify-content: center;
   align-items: center;
   margin-top: 15px;
+  border-radius: 20px;
 }
 
 .shoppingCart {
@@ -301,6 +308,7 @@ label {
 
 .Dark {
   background: #242224;
+  filter: contrast(90%) brightness(100%);
 }
 .Dark h2 {
   color: white;
@@ -325,6 +333,12 @@ label {
 .Dark .dishStyle {
   color: #f7f0f0;
 }
+.Dark .copyrightTitle {
+  color: white;
+}
+.Dark .copyright {
+  color: white;
+}
 .Dark .dishTitle {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 500;
@@ -339,8 +353,7 @@ label {
   border: 1px solid white;
   box-shadow: 3px 2px 3px white;
 }
-
-.btnAdd {
+.Dark .btnAdd {
   width: 70px;
   font-weight: 500;
   position: relative;
@@ -359,11 +372,12 @@ label {
   transition-duration: 0.4s;
   -webkit-transition-duration: 0.4s; /* Safari */
 }
-.btnAdd:hover {
+.Dark .btnAdd:hover {
   transition-duration: 0.1s;
   background-color: #f7f0f0;
+  filter: drop-shadow(5px 5px 5px red) invert(75%);
 }
-.btnAdd:after {
+.Dark .btnAdd:after {
   content: "";
   display: block;
   position: absolute;
@@ -376,7 +390,7 @@ label {
   transition: all 0.5s;
   box-shadow: 0 0 10px 40px green;
 }
-.btnAdd:active:after {
+.Dark .btnAdd:active:after {
   box-shadow: 0 0 0 0 green;
   position: absolute;
   border-radius: 4em;
@@ -385,6 +399,6 @@ label {
   opacity: 1;
   transition: 0s;
 }
-.btnAdd:active {
+.Dark .btnAdd:active {
   top: 1px;
 }/*# sourceMappingURL=main.css.map */
