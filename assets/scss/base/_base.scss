@@ -50,6 +50,10 @@ header {
   }
 }
 
+// .btnDelete {
+
+// }
+
 .btnDarkMode {
   width: 35px;
   height: 35px;
@@ -64,7 +68,6 @@ header {
 }
 
 #tri {
-  font-family: $font-text;
   margin: 15px 0 10px 0;
 }
 .libraryCard {
@@ -142,15 +145,17 @@ img {
   background-color: white;
   box-shadow: 3px 3px 3px grey;
 }
-
+ 
 .dishTitle {
   font-family: $font-main;
   font-weight: 500;
+  font-size: 30px;
+  width: auto;
 }
 
 .dishStyle {
   font-family: $font-text;
-  font-size: 16px;
+  font-size: 30px;
 }
 
 .dishPrice {
@@ -214,9 +219,7 @@ li {
 #cart {
   margin: 15px;
 }
-.dishTitle {
-  width: auto;
-}
+
 h2 {
   font-family: $font-main;
   text-align: center;
@@ -238,11 +241,104 @@ h2 {
   }
 }
 label {
+  visibility: hidden;
   @include responsive-desktop {
     color: white;
   }
 }
 
 .Dark {
-  background-color: black;
-}
+  background: #242224;
+  h2 {
+    color: white;
+    border: 1px solid white;
+    box-shadow: 6px 5px 6px white;
+    font-family: $font-main;
+    text-align: center;
+    background-color: #3f8426;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 8px;
+    width: 375px;
+  }
+  .dishCard {
+    background-color: rgb(21, 21, 21);
+    border: 1px solid white;
+    box-shadow: 6px 5px 6px white;
+  }
+
+  .dishPrice {
+    color:  #f7f0f0;
+  }
+
+  .dishStyle {
+    color:  #f7f0f0;
+  }
+
+  .dishTitle {
+    font-family: $font-main;
+    font-weight: 500;
+    width: auto;
+    background-color: transparent;
+    font-size: 30px;
+    box-shadow: none;
+    border: 0;
+  }
+
+  .listCart {
+    padding: 30px;
+    border: 1px solid white;
+    box-shadow: 3px 2px 3px white;
+
+  }
+
+  }
+  .btnAdd {
+    width: 70px;
+    font-weight: 500;
+    position: relative;
+    background-color: #f7f0f0;
+    border-radius: 30px;
+    font-size: 16px;
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    &:hover {
+      transition-duration: 0.1s;
+      background-color:  #f7f0f0;
+    }
+  
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      border-radius: 4em;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.5s;
+      box-shadow: 0 0 10px 40px green;
+    }
+  
+    &:active:after {
+      box-shadow: 0 0 0 0 green;
+      position: absolute;
+      border-radius: 4em;
+      left: 0;
+      top: 0;
+      opacity: 1;
+      transition: 0s;
+    }
+  
+    &:active {
+      top: 1px;
+    }
+  }
