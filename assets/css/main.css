@@ -94,7 +94,7 @@ header h1 {
   width: 35px;
   height: 35px;
 }
-.btnDarkMode:hover {
+.btnDarkMode:active {
   transform: rotate(180deg);
 }
 @media screen and (min-width: 900px) {
@@ -291,4 +291,8 @@ h2 {
   label {
     color: white;
   }
+}
+
+.Dark {
+  background-color: black;
 }/*# sourceMappingURL=main.css.map */

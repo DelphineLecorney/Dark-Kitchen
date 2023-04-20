@@ -53,7 +53,7 @@ header {
 .btnDarkMode {
   width: 35px;
   height: 35px;
-  &:hover {
+  &:active {
     transform: rotate(180deg);
   }
   @include responsive-desktop {
@@ -241,4 +241,8 @@ label {
   @include responsive-desktop {
     color: white;
   }
+}
+
+.Dark {
+  background-color: black;
 }
