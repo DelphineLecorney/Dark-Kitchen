@@ -85,9 +85,19 @@ header h1 {
 }
 @media screen and (min-width: 900px) {
   header {
-    width: 900px;
+    width: 90%;
     margin-bottom: 20px;
   }
+}
+
+.btnDelete {
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+}
+.btnDelete:hover {
+  transform: rotate(180deg);
+  background-color: red;
 }
 
 .btnDarkMode {
@@ -100,13 +110,9 @@ header h1 {
 @media screen and (min-width: 900px) {
   .btnDarkMode {
     position: absolute;
-    right: 200px;
+    right: 10%;
     top: 2.5px;
   }
-}
-
-#tri {
-  margin: 15px 0 10px 0;
 }
 
 @media screen and (min-width: 900px) {
@@ -272,25 +278,24 @@ h2 {
 @media screen and (min-width: 900px) {
   h2 {
     margin-top: 20px;
-    width: 900px;
   }
 }
 
+.menuBtn {
+  position: relative;
+  left: 10px;
+  margin: 15px 0 10px 0;
+}
 @media screen and (min-width: 900px) {
   .menuBtn {
     position: absolute;
     top: 0px;
-    left: 200px;
+    left: 10%;
   }
 }
 
 label {
-  visibility: hidden;
-}
-@media screen and (min-width: 900px) {
-  label {
-    color: white;
-  }
+  display: none;
 }
 
 .Dark {

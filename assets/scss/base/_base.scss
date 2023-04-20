@@ -45,14 +45,20 @@ header {
     }
   }
   @include responsive-desktop {
-    width: 900px;
+    width: 90%;
     margin-bottom: 20px;
   }
 }
 
-// .btnDelete {
-
-// }
+.btnDelete {
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  &:hover {
+    transform: rotate(180deg);
+    background-color: red;
+  }
+}
 
 .btnDarkMode {
   width: 35px;
@@ -62,14 +68,11 @@ header {
   }
   @include responsive-desktop {
     position: absolute;
-    right: 200px;
+    right: 10%;
     top: 2.5px;
   }
 }
 
-#tri {
-  margin: 15px 0 10px 0;
-}
 .libraryCard {
   @include responsive-desktop {
     display: flex;
@@ -145,7 +148,7 @@ img {
   background-color: white;
   box-shadow: 3px 3px 3px grey;
 }
- 
+
 .dishTitle {
   font-family: $font-main;
   font-weight: 500;
@@ -230,21 +233,20 @@ h2 {
   width: 375px;
   @include responsive-desktop {
     margin-top: 20px;
-    width: 900px;
   }
 }
 .menuBtn {
+  position: relative;
+  left: 10px;
+  margin: 15px 0 10px 0;
   @include responsive-desktop {
     position: absolute;
     top: 0px;
-    left: 200px;
+    left: 10%;
   }
 }
 label {
-  visibility: hidden;
-  @include responsive-desktop {
-    color: white;
-  }
+  display: none;
 }
 
 .Dark {
@@ -268,11 +270,11 @@ label {
   }
 
   .dishPrice {
-    color:  #f7f0f0;
+    color: #f7f0f0;
   }
 
   .dishStyle {
-    color:  #f7f0f0;
+    color: #f7f0f0;
   }
 
   .dishTitle {
@@ -289,56 +291,54 @@ label {
     padding: 30px;
     border: 1px solid white;
     box-shadow: 3px 2px 3px white;
-
   }
-
-  }
-  .btnAdd {
-    width: 70px;
-    font-weight: 500;
-    position: relative;
+}
+.btnAdd {
+  width: 70px;
+  font-weight: 500;
+  position: relative;
+  background-color: #f7f0f0;
+  border-radius: 30px;
+  font-size: 16px;
+  color: black;
+  padding: 5px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  &:hover {
+    transition-duration: 0.1s;
     background-color: #f7f0f0;
-    border-radius: 30px;
-    font-size: 16px;
-    color: black;
-    padding: 5px;
-    cursor: pointer;
-    user-select: none;
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition-duration: 0.4s;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    &:hover {
-      transition-duration: 0.1s;
-      background-color:  #f7f0f0;
-    }
-  
-    &:after {
-      content: "";
-      display: block;
-      position: absolute;
-      border-radius: 4em;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: all 0.5s;
-      box-shadow: 0 0 10px 40px green;
-    }
-  
-    &:active:after {
-      box-shadow: 0 0 0 0 green;
-      position: absolute;
-      border-radius: 4em;
-      left: 0;
-      top: 0;
-      opacity: 1;
-      transition: 0s;
-    }
-  
-    &:active {
-      top: 1px;
-    }
   }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px green;
+  }
+
+  &:active:after {
+    box-shadow: 0 0 0 0 green;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    transition: 0s;
+  }
+
+  &:active {
+    top: 1px;
+  }
+}
