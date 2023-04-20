@@ -48,8 +48,12 @@ function mettreAJourResultats() {
 
     // Filtrage des objets en fonction de la sélection du menu déroulant
     const triSelectionne = menuDeroulant.value;
-    const objetsFiltres = dishCollection.filter(objet => objet.dishStyle === triSelectionne);
-
+    let objetsFiltres;
+    if(triSelectionne === "All styles"){
+        objetsFiltres = dishCollection;
+    }else{
+    objetsFiltres = dishCollection.filter(objet => objet.dishStyle === triSelectionne);
+    }
     // Affichage des résultats filtrés
     objetsFiltres.forEach(element => {
         const newCard = document.createElement("div");
@@ -143,14 +147,14 @@ function displayCartTotal() {
     let total = 0;
     for (let i = 0; i < cartItems.length; i++) {
         const priceStr = cartItems[i].price.replace(" €", "");
-        const priceNum = parseFloat(priceStr);
+        const priceNum = Number.parseFloat(priceStr);
         total += priceNum;
     }
     console.log(`Total: ${total} €`);
 
     conteneurTotal.innerHTML = "";
     let content = `
-        <li class="cartItem">Total : ${total} €</li>
+        <li class="cartItem">Total : ${total.toFixed(2)} €</li>
         `;
     conteneurTotal.innerHTML += content;
 }
