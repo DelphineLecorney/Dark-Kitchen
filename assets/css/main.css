@@ -94,6 +94,7 @@ header h1 {
   width: 15px;
   height: 15px;
   border-radius: 5px;
+  transition-duration: 5s;
 }
 .btnDelete:hover {
   transform: rotate(180deg);
