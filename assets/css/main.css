@@ -77,15 +77,45 @@ header h1 {
   font-size: 24px;
   color: white;
 }
+@media screen and (min-width: 900px) {
+  header h1 {
+    letter-spacing: 2px;
+    font-size: 30px;
+  }
+}
+@media screen and (min-width: 900px) {
+  header {
+    width: 900px;
+    margin-bottom: 20px;
+  }
+}
 
 .btnDarkMode {
   width: 35px;
   height: 35px;
 }
+.btnDarkMode:active {
+  transform: rotate(180deg);
+}
+@media screen and (min-width: 900px) {
+  .btnDarkMode {
+    position: absolute;
+    right: 200px;
+    top: 2.5px;
+  }
+}
 
 #tri {
   font-family: "Crimson Text", serif;
   margin: 15px 0 10px 0;
+}
+
+@media screen and (min-width: 900px) {
+  .libraryCard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 img {
@@ -97,13 +127,51 @@ img {
 
 .btnAdd {
   width: 70px;
-  padding: 5px;
-  border: 1px solid black;
+  font-weight: 500;
+  position: relative;
+  background-color: black;
   border-radius: 30px;
   font-size: 16px;
-  font-weight: 500;
   color: white;
-  background-color: black;
+  padding: 5px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+.btnAdd:hover {
+  transition-duration: 0.1s;
+  background-color: #3a3a3a;
+}
+.btnAdd:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px green;
+}
+.btnAdd:active:after {
+  box-shadow: 0 0 0 0 green;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+.btnAdd:active {
+  top: 1px;
 }
 
 .dishCard {
@@ -153,6 +221,7 @@ li {
   margin-right: 10px;
   text-align: center;
   background-color: #3f8426;
+  color: #f5fbef;
   border-radius: 5px;
   padding: 2px;
   margin: 5px;
@@ -162,7 +231,8 @@ li {
 .cartItem {
   margin-right: 10px;
   text-align: center;
-  background-color: #95C08D;
+  background-color: #95c08d;
+  color: black;
   border-radius: 6px;
   padding: 2px;
   margin: 5px;
@@ -178,13 +248,51 @@ li {
   margin-top: 15px;
 }
 
+.shoppingCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 #cart {
   margin: 15px;
 }
-#cart h2 {
+
+.dishTitle {
+  width: auto;
+}
+
+h2 {
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
   background-color: white;
-  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   border-radius: 8px;
+  width: 375px;
+}
+@media screen and (min-width: 900px) {
+  h2 {
+    margin-top: 20px;
+    width: 900px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .menuBtn {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  label {
+    color: white;
+  }
+}
+
+.Dark {
+  background-color: black;
 }/*# sourceMappingURL=main.css.map */

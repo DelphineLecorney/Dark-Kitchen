@@ -6,11 +6,23 @@ body {
   flex-direction: column;
   background: hsla(148, 74%, 95%, 1);
 
-  background: linear-gradient(225deg, hsla(148, 74%, 95%, 1) 0%, hsla(104, 55%, 33%, 1) 100%);
+  background: linear-gradient(
+    225deg,
+    hsla(148, 74%, 95%, 1) 0%,
+    hsla(104, 55%, 33%, 1) 100%
+  );
 
-  background: -moz-linear-gradient(225deg, hsla(148, 74%, 95%, 1) 0%, hsla(104, 55%, 33%, 1) 100%);
+  background: -moz-linear-gradient(
+    225deg,
+    hsla(148, 74%, 95%, 1) 0%,
+    hsla(104, 55%, 33%, 1) 100%
+  );
 
-  background: -webkit-linear-gradient(225deg, hsla(148, 74%, 95%, 1) 0%, hsla(104, 55%, 33%, 1) 100%);
+  background: -webkit-linear-gradient(
+    225deg,
+    hsla(148, 74%, 95%, 1) 0%,
+    hsla(104, 55%, 33%, 1) 100%
+  );
 
   // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ebfcf3", endColorstr="#3f8426", GradientType=1 );
 }
@@ -27,35 +39,95 @@ header {
     font-family: $font-text;
     font-size: 24px;
     color: white;
+    @include responsive-desktop {
+      letter-spacing: 2px;
+      font-size: 30px;
+    }
+  }
+  @include responsive-desktop {
+    width: 900px;
+    margin-bottom: 20px;
   }
 }
 
 .btnDarkMode {
   width: 35px;
   height: 35px;
+  &:active {
+    transform: rotate(180deg);
+  }
+  @include responsive-desktop {
+    position: absolute;
+    right: 200px;
+    top: 2.5px;
+  }
 }
 
 #tri {
   font-family: $font-text;
   margin: 15px 0 10px 0;
 }
-
+.libraryCard {
+  @include responsive-desktop {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
 img {
   width: 300px;
   height: 250px;
   margin: 5px;
   border-radius: 20px;
 }
-
 .btnAdd {
   width: 70px;
-  padding: 5px;
-  border: 1px solid black;
+  font-weight: 500;
+  position: relative;
+  background-color: black;
   border-radius: 30px;
   font-size: 16px;
-  font-weight: 500;
   color: white;
-  background-color: black;
+  padding: 5px;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  &:hover {
+    transition-duration: 0.1s;
+    background-color: #3a3a3a;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px green;
+  }
+
+  &:active:after {
+    box-shadow: 0 0 0 0 green;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    transition: 0s;
+  }
+
+  &:active {
+    top: 1px;
+  }
 }
 
 .dishCard {
@@ -105,6 +177,7 @@ li {
   margin-right: 10px;
   text-align: center;
   background-color: #3f8426;
+  color: #f5fbef;
   border-radius: 5px;
   padding: 2px;
   margin: 5px;
@@ -114,13 +187,13 @@ li {
 .cartItem {
   margin-right: 10px;
   text-align: center;
-  background-color: #95C08D;
+  background-color: #95c08d;
+  color: black;
   border-radius: 6px;
   padding: 2px;
   margin: 5px;
   text-transform: capitalize;
   width: 280px;
-  
 }
 
 .listCart {
@@ -131,17 +204,45 @@ li {
   margin-top: 15px;
 }
 
-// .shoppingCart {
-//   background-color: #3f8426;
-// }
+.shoppingCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 #cart {
   margin: 15px;
-  h2 {
-    font-family: $font-main;
-    text-align: center;
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
+}
+.dishTitle {
+  width: auto;
+}
+h2 {
+  font-family: $font-main;
+  text-align: center;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 8px;
+  width: 375px;
+  @include responsive-desktop {
+    margin-top: 20px;
+    width: 900px;
   }
+}
+.menuBtn {
+  @include responsive-desktop {
+    position: absolute;
+    top: 0px;
+    left: 200px;
+  }
+}
+label {
+  @include responsive-desktop {
+    color: white;
+  }
+}
+
+.Dark {
+  background-color: black;
 }
