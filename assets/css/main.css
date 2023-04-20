@@ -106,7 +106,6 @@ header h1 {
 }
 
 #tri {
-  font-family: "Crimson Text", serif;
   margin: 15px 0 10px 0;
 }
 
@@ -189,11 +188,13 @@ img {
 .dishTitle {
   font-family: "Josefin Sans", sans-serif;
   font-weight: 500;
+  font-size: 30px;
+  width: auto;
 }
 
 .dishStyle {
   font-family: "Crimson Text", serif;
-  font-size: 16px;
+  font-size: 30px;
 }
 
 .dishPrice {
@@ -259,10 +260,6 @@ li {
   margin: 15px;
 }
 
-.dishTitle {
-  width: auto;
-}
-
 h2 {
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
@@ -287,6 +284,9 @@ h2 {
   }
 }
 
+label {
+  visibility: hidden;
+}
 @media screen and (min-width: 900px) {
   label {
     color: white;
@@ -294,5 +294,91 @@ h2 {
 }
 
 .Dark {
-  background-color: black;
+  background: #242224;
+}
+.Dark h2 {
+  color: white;
+  border: 1px solid white;
+  box-shadow: 6px 5px 6px white;
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+  background-color: #3f8426;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 8px;
+  width: 375px;
+}
+.Dark .dishCard {
+  background-color: rgb(21, 21, 21);
+  border: 1px solid white;
+  box-shadow: 6px 5px 6px white;
+}
+.Dark .dishPrice {
+  color: #f7f0f0;
+}
+.Dark .dishStyle {
+  color: #f7f0f0;
+}
+.Dark .dishTitle {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 500;
+  width: auto;
+  background-color: transparent;
+  font-size: 30px;
+  box-shadow: none;
+  border: 0;
+}
+.Dark .listCart {
+  padding: 30px;
+  border: 1px solid white;
+  box-shadow: 3px 2px 3px white;
+}
+
+.btnAdd {
+  width: 70px;
+  font-weight: 500;
+  position: relative;
+  background-color: #f7f0f0;
+  border-radius: 30px;
+  font-size: 16px;
+  color: black;
+  padding: 5px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+}
+.btnAdd:hover {
+  transition-duration: 0.1s;
+  background-color: #f7f0f0;
+}
+.btnAdd:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px green;
+}
+.btnAdd:active:after {
+  box-shadow: 0 0 0 0 green;
+  position: absolute;
+  border-radius: 4em;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+.btnAdd:active {
+  top: 1px;
 }/*# sourceMappingURL=main.css.map */
