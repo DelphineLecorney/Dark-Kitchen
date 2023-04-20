@@ -174,11 +174,11 @@ function displayCartTotal() {
 function toggleDarkMode (){
     let body = document.querySelector('body');
     if(body.classList.contains("Light")){
-    body.classList.toggle("Dark");
-    console.log("Dark");
+        body.classList.toggle("Dark");
+        body.classList.remove("Light");
     }else{
         body.classList.toggle("Light");
-    console.log("Light");
+        body.classList.remove("Dark");
     };
 };
 
