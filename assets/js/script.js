@@ -168,3 +168,19 @@ function displayCartTotal() {
         `;
     conteneurTotal.innerHTML += content;
 }
+
+//---------------------------------------------------------------------------
+
+function toggleDarkMode (){
+    let body = document.querySelector('body');
+    if(body.classList.contains("Light")){
+    body.classList.toggle("Dark");
+    console.log("Dark");
+    }else{
+        body.classList.toggle("Light");
+    console.log("Light");
+    };
+};
+
+let btnDark = document.querySelector('.btnDarkMode');
+btnDark.addEventListener('click', toggleDarkMode);
