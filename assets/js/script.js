@@ -4,25 +4,30 @@ imgDarkMode.src = "https://www.svgrepo.com/show/309493/dark-theme.svg";
 darkMode.appendChild(imgDarkMode);
 imgDarkMode.classList.add("btnDarkMode");
 
-// create dishCard
-function createDishCards(Collection, cardClass, titleClass, imgClass, styleClass, ingredientsClass, priceClass, buttonClass) {
+// -------------------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------
+// Nos fonctions
+// -------------------------------------------------------------------------
+
+// Fonction qui va créer des cards en fonction des objets d'une collection
+function createDishCards(Collection) {
   const libraryCard = document.querySelector(".libraryCard");
 
   Collection.forEach((element) => {
     const newCard = document.createElement("div");
-    newCard.classList = cardClass;
+    newCard.classList = "dishCard";
 
     const ingredientsList = element.dishIngredients
       .map((ingredient) => `<li>${ingredient}</li>`)
       .join("");
 
     const content = `
-      <h2 class="${titleClass}">${element.dishTitle}</h2>
-      <img src="${element.dishImg}" alt="${element.dishTitle}" class="${imgClass}" />
-      <p class="${styleClass}">${element.dishStyle}</p>
-      <ul class="${ingredientsClass}">${ingredientsList}</ul>
-      <p class="${priceClass}">${element.dishPrice} €</p>
-      <button class="${buttonClass}">Add</button>
+      <h2 class="dishTitle">${element.dishTitle}</h2>
+      <img src="${element.dishImg}" alt="${element.dishTitle}" class="dishImg" />
+      <p class="dishStyle">${element.dishStyle}</p>
+      <ul class="dishIngredients">${ingredientsList}</ul>
+      <p class="dishPrice">${element.dishPrice} €</p>
+      <button class="btnAdd">Add</button>
     `;
       
     newCard.innerHTML += content;
@@ -30,16 +35,9 @@ function createDishCards(Collection, cardClass, titleClass, imgClass, styleClass
   });
 }
 
-createDishCards(dishCollection, "dishCard", "dishTitle", "dishImg", "dishStyle", "dishIngredients", "dishPrice", "btnAdd");
-
-// --------------------------------------------------------------------------------------------------------------------------------
-
-// Sélection du menu déroulant et du conteneur de résultats
-const menuDeroulant = document.getElementById("tri");
-
+// Fonction qui met à jour le conteneur des cards menus
 function mettreAJourResultats() {
   // Suppression des résultats précédents
-  const conteneurResultats = document.querySelector(".libraryCard");
   conteneurResultats.innerHTML = "";
 
   // Filtrage des objets en fonction de la sélection du menu déroulant
@@ -54,7 +52,7 @@ function mettreAJourResultats() {
   }
   // Affichage des résultats filtrés
   
-  createDishCards(objetsFiltres, "dishCard", "dishTitle", "dishImg", "dishStyle", "dishIngredients", "dishPrice", "btnAdd");
+  createDishCards(objetsFiltres);
 
     const addButtons = document.querySelectorAll(".btnAdd");
 
@@ -77,8 +75,10 @@ function mettreAJourResultats() {
     addBtnListeners(".btnAdd", "click", [afficherCartItems, displayCartTotal]);
 }
 
-menuDeroulant.addEventListener("change", mettreAJourResultats);
-
+// Fonction qui permet d'ajouter des eventListeners sur des boutons 
+// en prenant en 1erparamètre un selecteur représentant une class 
+// en 2eme param le type d'évènements
+// en 3eme param un tableau de fonction à associer
 function addBtnListeners(selector, eventType, handlers) {
   const elements = document.querySelectorAll(selector);
   elements.forEach((element) => {
@@ -88,11 +88,36 @@ function addBtnListeners(selector, eventType, handlers) {
   });
 }
 
-// ----------------------------------------------------------------------------------------------------------------------------------
+// Fonction qui va supprimer un élément du panier en utilisant son index
+// Elle prend en paramètre l'index de l'élément à supprimer.
+function deleteItem(index) {
+  cartItems.splice(index, 1);
+  afficherCartItems();
+  displayCartTotal();
+}
 
-let cartItems = [];
-let conteneurCart = document.querySelector(".listCart");
+// Fonction qui va géré l'affichage du panier d'achat
+function afficherCartItems() {
+  conteneurCart.innerHTML = "";
 
+  for (let i = 0; i < cartItems.length; i++) {
+    let content = `
+    <li class="cartItem">
+    ${cartItems[i].title} ${cartItems[i].price}
+    <input type="image" class="btnDelete" alt="delete" src="./img/cross-svgrepo-com.svg" onclick="deleteItem(${i})">
+     </li>
+     `
+        ;
+    conteneurCart.innerHTML += content;
+  }
+};
+
+// --------------------------------------------------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------
+// Initialisation des cards et ajout des eventsListeners aux boutons 'add'
+// -------------------------------------------------------------------------
+
+createDishCards(dishCollection);
 const addButtons = document.querySelectorAll(".btnAdd");
 
 addButtons.forEach((button) => {
@@ -111,33 +136,32 @@ addButtons.forEach((button) => {
   });
 });
 
+
 addBtnListeners(".btnAdd", "click", [afficherCartItems, displayCartTotal]);
 
-function deleteItem(index) {
-  cartItems.splice(index, 1);
-  afficherCartItems();
-  displayCartTotal();
-}
+// --------------------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------
+// Gestion du tri par style de menu
+// ------------------------------------------------------
 
-function afficherCartItems() {
-  conteneurCart.innerHTML = "";
+// Sélection du menu déroulant et du conteneur de résultats
 
-  for (let i = 0; i < cartItems.length; i++) {
-    let content = `
-    <li class="cartItem">
-    ${cartItems[i].title} ${cartItems[i].price}
-    <input type="image" class="btnDelete" alt="delete" src="./img/cross-svgrepo-com.svg" onclick="deleteItem(${i})">
-     </li>
-     `
-        ;
-    conteneurCart.innerHTML += content;
-  }
-};
+const menuDeroulant = document.getElementById("tri");
+const conteneurResultats = document.querySelector(".libraryCard");
+
+// Ajout de l'eventListener associé à la fonction de maj sur le menu déroulant
+menuDeroulant.addEventListener("change", mettreAJourResultats);
 
 // ----------------------------------------------------------------------------------------------------------------------------------
+// ------------------------------------------------------
+// Gestion du panier d'achat
+// ------------------------------------------------------
 
+let cartItems = [];
+let conteneurCart = document.querySelector(".listCart");
 let conteneurTotal = document.querySelector(".conteneurTotal");
 
+// Fonction qui permet d'afficher une ligne représentant le Total du panier
 function displayCartTotal() {
   let total = 0;
   for (let i = 0; i < cartItems.length; i++) {
@@ -155,6 +179,9 @@ function displayCartTotal() {
 }
 
 //---------------------------------------------------------------------------
+// ------------------------------------------------------
+// Gestion du DarkMode
+// ------------------------------------------------------
 
 function toggleDarkMode() {
   let body = document.querySelector("body");
@@ -171,6 +198,9 @@ let btnDark = document.querySelector(".btnDarkMode");
 btnDark.addEventListener("click", toggleDarkMode);
 
 //------------------------------------------------------------------
+// ------------------------------------------------------
+// Création et "remplissage" du footer
+// ------------------------------------------------------
 
 let copyright = document.querySelector("footer");
 let content = `
