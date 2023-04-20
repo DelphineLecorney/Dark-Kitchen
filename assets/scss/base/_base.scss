@@ -6,11 +6,23 @@ body {
   flex-direction: column;
   background: hsla(148, 74%, 95%, 1);
 
-  background: linear-gradient(225deg, hsla(148, 74%, 95%, 1) 0%, hsla(104, 55%, 33%, 1) 100%);
+  background: linear-gradient(
+    225deg,
+    hsla(148, 74%, 95%, 1) 0%,
+    hsla(104, 55%, 33%, 1) 100%
+  );
 
-  background: -moz-linear-gradient(225deg, hsla(148, 74%, 95%, 1) 0%, hsla(104, 55%, 33%, 1) 100%);
+  background: -moz-linear-gradient(
+    225deg,
+    hsla(148, 74%, 95%, 1) 0%,
+    hsla(104, 55%, 33%, 1) 100%
+  );
 
-  background: -webkit-linear-gradient(225deg, hsla(148, 74%, 95%, 1) 0%, hsla(104, 55%, 33%, 1) 100%);
+  background: -webkit-linear-gradient(
+    225deg,
+    hsla(148, 74%, 95%, 1) 0%,
+    hsla(104, 55%, 33%, 1) 100%
+  );
 
   // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ebfcf3", endColorstr="#3f8426", GradientType=1 );
 }
@@ -114,13 +126,12 @@ li {
 .cartItem {
   margin-right: 10px;
   text-align: center;
-  background-color: #95C08D;
+  background-color: #95c08d;
   border-radius: 6px;
   padding: 2px;
   margin: 5px;
   text-transform: capitalize;
   width: 280px;
-  
 }
 
 .listCart {
@@ -131,17 +142,22 @@ li {
   margin-top: 15px;
 }
 
-// .shoppingCart {
-//   background-color: #3f8426;
-// }
+.shoppingCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
 
 #cart {
   margin: 15px;
-  h2 {
-    font-family: $font-main;
-    text-align: center;
-    background-color: white;
-    padding: 15px;
-    border-radius: 8px;
-  }
+}
+h2 {
+  font-family: $font-main;
+  text-align: center;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 8px;
+  width: 375px;
 }

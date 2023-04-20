@@ -162,7 +162,7 @@ li {
 .cartItem {
   margin-right: 10px;
   text-align: center;
-  background-color: #95C08D;
+  background-color: #95c08d;
   border-radius: 6px;
   padding: 2px;
   margin: 5px;
@@ -178,13 +178,23 @@ li {
   margin-top: 15px;
 }
 
+.shoppingCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 #cart {
   margin: 15px;
 }
-#cart h2 {
+
+h2 {
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
   background-color: white;
-  padding: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   border-radius: 8px;
+  width: 375px;
 }/*# sourceMappingURL=main.css.map */
