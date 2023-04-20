@@ -7,11 +7,11 @@
 // burgerMenu.appendChild(imgBurger);
 // burgerMenu.classList.add("burgerImg")
 
-// let darkMode = document.querySelector(".darkmodeBtn");
-// let imgDarkMode = document.createElement("img");
-// imgDarkMode.src = "https://www.svgrepo.com/show/309493/dark-theme.svg";
-// darkMode.appendChild(imgDarkMode);
-// imgDarkMode.classList.add("btnDarkMode");
+let darkMode = document.querySelector(".darkmodeBtn");
+let imgDarkMode = document.createElement("img");
+imgDarkMode.src = "https://www.svgrepo.com/show/309493/dark-theme.svg";
+darkMode.appendChild(imgDarkMode);
+imgDarkMode.classList.add("btnDarkMode");
 
 // create dishCard
 const libraryCard = document.querySelector(".libraryCard");
@@ -48,8 +48,12 @@ function mettreAJourResultats() {
 
     // Filtrage des objets en fonction de la sélection du menu déroulant
     const triSelectionne = menuDeroulant.value;
-    const objetsFiltres = dishCollection.filter(objet => objet.dishStyle === triSelectionne);
-
+    let objetsFiltres;
+    if(triSelectionne === "All styles"){
+        objetsFiltres = dishCollection;
+    }else{
+    objetsFiltres = dishCollection.filter(objet => objet.dishStyle === triSelectionne);
+    }
     // Affichage des résultats filtrés
     objetsFiltres.forEach(element => {
         const newCard = document.createElement("div");
@@ -123,16 +127,26 @@ addButtons.forEach((button) => {
     button.addEventListener("click", displayCartTotal)
 });
 
+function deleteItem(index) {
+    cartItems.splice(index, 1);
+    afficherCartItems();
+    displayCartTotal();
+}
+
 function afficherCartItems() {
 
     conteneurCart.innerHTML = "";
 
-    for (items of cartItems) {
+    for (let i = 0; i < cartItems.length; i++) {
         let content = `
-        <li class="cartItem">${items.title} ${items.price}</li>
+        <li class="cartItem">
+        ${cartItems[i].title} ${cartItems[i].price}
+         <button class="btnDelete" onclick="deleteItem(${i})">Delete</button>
+         </li>
         `;
         conteneurCart.innerHTML += content;
     }
+
 }
 
 // ----------------------------------------------------------------------------------------------------------------------------------
@@ -143,14 +157,30 @@ function displayCartTotal() {
     let total = 0;
     for (let i = 0; i < cartItems.length; i++) {
         const priceStr = cartItems[i].price.replace(" €", "");
-        const priceNum = parseFloat(priceStr);
+        const priceNum = Number.parseFloat(priceStr);
         total += priceNum;
     }
     console.log(`Total: ${total} €`);
 
     conteneurTotal.innerHTML = "";
     let content = `
-        <li class="cartItem">Total : ${total} €</li>
+        <li class="cartItem">Total : ${total.toFixed(2)} €</li>
         `;
     conteneurTotal.innerHTML += content;
 }
+
+//---------------------------------------------------------------------------
+
+function toggleDarkMode (){
+    let body = document.querySelector('body');
+    if(body.classList.contains("Light")){
+    body.classList.toggle("Dark");
+    console.log("Dark");
+    }else{
+        body.classList.toggle("Light");
+    console.log("Light");
+    };
+};
+
+let btnDark = document.querySelector('.btnDarkMode');
+btnDark.addEventListener('click', toggleDarkMode);
