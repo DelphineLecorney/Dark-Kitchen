@@ -7,11 +7,11 @@
 // burgerMenu.appendChild(imgBurger);
 // burgerMenu.classList.add("burgerImg")
 
-// let darkMode = document.querySelector(".darkmodeBtn");
-// let imgDarkMode = document.createElement("img");
-// imgDarkMode.src = "https://www.svgrepo.com/show/309493/dark-theme.svg";
-// darkMode.appendChild(imgDarkMode);
-// imgDarkMode.classList.add("btnDarkMode");
+let darkMode = document.querySelector(".darkmodeBtn");
+let imgDarkMode = document.createElement("img");
+imgDarkMode.src = "https://www.svgrepo.com/show/309493/dark-theme.svg";
+darkMode.appendChild(imgDarkMode);
+imgDarkMode.classList.add("btnDarkMode");
 
 // create dishCard
 const libraryCard = document.querySelector(".libraryCard");
@@ -127,16 +127,26 @@ addButtons.forEach((button) => {
     button.addEventListener("click", displayCartTotal)
 });
 
+function deleteItem(index) {
+    cartItems.splice(index, 1);
+    afficherCartItems();
+    displayCartTotal();
+}
+
 function afficherCartItems() {
 
     conteneurCart.innerHTML = "";
 
-    for (items of cartItems) {
+    for (let i = 0; i < cartItems.length; i++) {
         let content = `
-        <li class="cartItem">${items.title} ${items.price}</li>
+        <li class="cartItem">
+        ${cartItems[i].title} ${cartItems[i].price}
+         <button class="btnDelete" onclick="deleteItem(${i})">Delete</button>
+         </li>
         `;
         conteneurCart.innerHTML += content;
     }
+
 }
 
 // ----------------------------------------------------------------------------------------------------------------------------------
