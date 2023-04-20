@@ -23,8 +23,6 @@ body {
     hsla(148, 74%, 95%, 1) 0%,
     hsla(104, 55%, 33%, 1) 100%
   );
-
-  // filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#ebfcf3", endColorstr="#3f8426", GradientType=1 );
 }
 header {
   background-color: #3f8426;
@@ -143,7 +141,6 @@ img {
 }
 
 .dishCard {
-  // border: 1px solid black;
   border-radius: 20px;
   margin: 8px;
   width: 375px;
@@ -255,7 +252,9 @@ h2 {
 label {
   display: none;
 }
-
+// .dark is a function that is set in js in order to change the state of the whole page.
+// each element in the .dark will see his parameters change when the darkmode is on.
+// BIG FAT MIXIN YOU KNOW
 .Dark {
   background: #242224;
   filter: contrast(90%) brightness(100%);
