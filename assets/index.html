@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script defer src="./js/collection.js"></script>
+    <script defer src="./js/script.js"></script>
     <title>Dark kitchen</title>
 </head>
-<body>
-    
+
+<body class="Light">
+    <header>
+        <div></div>
+        <h1>Dark Kitchen</h1>
+        <div class="darkmodeBtn"></div>
+    </header>
+    <main>
+        <div class="menuBtn">
+            <label for="tri">Trier par :</label>
+            <select id="tri">
+              <option value="All styles">All styles</option>
+              <option value="Vegan">Vegan</option>
+              <option value="Comfort Food">Comfort Food</option>
+              <option value="Healthy">Healthy</option>
+              <option value="Halal">Halal</option>
+              <option value="Nicolas Cage">Nicolas Cage</option>
+              </select>
+        </div>
+        <section class="libraryCard"></section>
+        <section class="shoppingCart">
+            <h2>Shopping Cart</h2>
+            <div id="cart">
+                <ul class="listCart"></ul>
+                <ul class="conteneurTotal"></ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <!--Copyright-->
+    </footer>
 </body>
+
 </html>

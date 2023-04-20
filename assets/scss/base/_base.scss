@@ -1,2 +1,359 @@
 //Style commun à tous les éléments
+body {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  flex-direction: column;
+  background: hsla(148, 74%, 95%, 1);
 
+  background: linear-gradient(
+    225deg,
+    hsla(148, 74%, 95%, 1) 0%,
+    hsla(104, 55%, 33%, 1) 100%
+  );
+
+  background: -moz-linear-gradient(
+    225deg,
+    hsla(148, 74%, 95%, 1) 0%,
+    hsla(104, 55%, 33%, 1) 100%
+  );
+
+  background: -webkit-linear-gradient(
+    225deg,
+    hsla(148, 74%, 95%, 1) 0%,
+    hsla(104, 55%, 33%, 1) 100%
+  );
+}
+header {
+  background-color: #3f8426;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 375px;
+  height: 50px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  h1 {
+    font-family: $font-text;
+    font-size: 24px;
+    color: white;
+    @include responsive-desktop {
+      letter-spacing: 2px;
+      font-size: 30px;
+    }
+  }
+  @include responsive-desktop {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+}
+
+.btnDelete {
+  width: 15px;
+  height: 15px;
+  border-radius: 5px;
+  transition-duration: 5s;
+  &:hover {
+    transform: rotate(180deg);
+    background-color: red;
+  }
+}
+
+.btnDarkMode {
+  width: 35px;
+  height: 35px;
+  &:active {
+    transform: rotate(180deg);
+  }
+  @include responsive-desktop {
+    position: absolute;
+    right: 10%;
+    top: 2.5px;
+  }
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.libraryCard {
+  @include responsive-desktop {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+img {
+  width: 300px;
+  height: 250px;
+  margin: 5px;
+  border-radius: 20px;
+}
+.btnAdd {
+  width: 70px;
+  font-weight: 500;
+  position: relative;
+  background-color: black;
+  border-radius: 30px;
+  font-size: 16px;
+  color: white;
+  padding: 5px;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  &:hover {
+    transition-duration: 0.1s;
+    background-color: #3a3a3a;
+  }
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 10px 40px green;
+  }
+
+  &:active:after {
+    box-shadow: 0 0 0 0 green;
+    position: absolute;
+    border-radius: 4em;
+    left: 0;
+    top: 0;
+    opacity: 1;
+    transition: 0s;
+  }
+
+  &:active {
+    top: 1px;
+  }
+}
+
+.dishCard {
+  border-radius: 20px;
+  margin: 8px;
+  width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 3px 3px 3px grey;
+}
+
+.dishTitle {
+  font-family: $font-main;
+  font-weight: 500;
+  font-size: 30px;
+  width: auto;
+}
+
+.dishStyle {
+  font-family: $font-text;
+  font-size: 30px;
+}
+
+.dishPrice {
+  font-family: $font-main;
+  font-weight: 600;
+}
+
+.dishTitle,
+.dishStyle,
+.dishPrice,
+.dishIngredients,
+.btnAdd {
+  margin: 5px;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+li {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+  background-color: #3f8426;
+  color: #f5fbef;
+  border-radius: 5px;
+  padding: 2px;
+  margin: 5px;
+  text-transform: capitalize;
+}
+
+.cartItem {
+  margin-right: 10px;
+  text-align: center;
+  background-color: #95c08d;
+  color: black;
+  border-radius: 6px;
+  padding: 2px;
+  margin: 5px;
+  text-transform: capitalize;
+  width: 280px;
+}
+
+.listCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  border-radius: 20px;
+}
+
+.shoppingCart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#cart {
+  margin: 15px;
+}
+
+h2 {
+  font-family: $font-main;
+  text-align: center;
+  background-color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 8px;
+  width: 375px;
+  @include responsive-desktop {
+    margin-top: 20px;
+  }
+}
+.menuBtn {
+  position: relative;
+  left: 10px;
+  margin: 15px 0 10px 0;
+  @include responsive-desktop {
+    position: absolute;
+    top: 0px;
+    left: 10%;
+  }
+}
+label {
+  display: none;
+}
+// .dark is a function that is set in js in order to change the state of the whole page.
+// each element in the .dark will see his parameters change when the darkmode is on.
+// BIG FAT MIXIN YOU KNOW
+.Dark {
+  background: #242224;
+  filter: contrast(90%) brightness(100%);
+  h2 {
+    color: white;
+    border: 1px solid white;
+    box-shadow: 6px 5px 6px white;
+    font-family: $font-main;
+    text-align: center;
+    background-color: #3f8426;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 8px;
+    width: 375px;
+  }
+  .dishCard {
+    background-color: rgb(21, 21, 21);
+    border: 1px solid white;
+    box-shadow: 6px 5px 6px white;
+  }
+
+  .dishPrice {
+    color: #f7f0f0;
+  }
+
+  .dishStyle {
+    color: #f7f0f0;
+  }
+  .copyrightTitle {
+    color: white;
+  }
+  .copyright {
+    color: white;
+  }
+
+  .dishTitle {
+    font-family: $font-main;
+    font-weight: 500;
+    width: auto;
+    background-color: transparent;
+    font-size: 30px;
+    box-shadow: none;
+    border: 0;
+  }
+
+  .listCart {
+    padding: 30px;
+    border: 1px solid white;
+    box-shadow: 3px 2px 3px white;
+  }
+
+  .btnAdd {
+    width: 70px;
+    font-weight: 500;
+    position: relative;
+    background-color: #f7f0f0;
+    border-radius: 30px;
+    font-size: 16px;
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    &:hover {
+      transition-duration: 0.1s;
+      background-color: #f7f0f0;
+      filter: drop-shadow(5px 5px 5px red) invert(75%);
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      position: absolute;
+      border-radius: 4em;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.5s;
+      box-shadow: 0 0 10px 40px green;
+    }
+
+    &:active:after {
+      box-shadow: 0 0 0 0 green;
+      position: absolute;
+      border-radius: 4em;
+      left: 0;
+      top: 0;
+      opacity: 1;
+      transition: 0s;
+    }
+
+    &:active {
+      top: 1px;
+    }
+  }
+}
